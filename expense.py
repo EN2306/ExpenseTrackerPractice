@@ -18,7 +18,7 @@ def get_highest_expense(expenses):
     if len(expenses) > 0:
         for i in range(len(expenses)):
             if float(expenses[i]['amount']) >highest:
-                highest = float(expenses[i]['amount'])
+                highest = expenses[i]
         return highest
     else:
         return None
@@ -32,13 +32,13 @@ def calc_average_expenses(expenses):
 def get_expenses_by_category(expenses, category):
     ctg=[]
     for i in range(len(expenses)):
-        if expenses[i][category]:
+        if expenses[i]["category"] == category:
             ctg.append(expenses[i])
     return ctg
 
 def format_total(total):
     t=float(total)
-    print(f"Total Expenses: ${t:.3f}")
+    return f"Total expenses: ${t:.2f}"
 
 def main():
     print("----- Student Expense Tracker -----")
