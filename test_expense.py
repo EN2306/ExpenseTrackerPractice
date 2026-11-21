@@ -4,7 +4,7 @@ import pytest
 def test_calc_total_amount():
     assert expense.calc_total_expenses(expense.expenses) == 22.60
 def test_get_highest_expense():
-    assert expense.get_highest_expense(expense.expenses) == 8.50
+    assert expense.get_highest_expense(expense.expenses) == ({"item": "Dinner", "amount": "8.50", "category": "Food"})
 def test_calc_average_expenses():
     assert expense.calc_average_expenses(expense.expenses) == pytest.approx(4.52)
 def test_get_expenses_by_category():

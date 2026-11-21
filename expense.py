@@ -15,13 +15,13 @@ def calc_total_expenses(expenses):
     
 def get_highest_expense(expenses):
     highest = 0.0
-    if len(expenses) > 0:
-        for i in range(len(expenses)):
-            if float(expenses[i]['amount']) >highest:
-                highest = expenses[i]
-        return highest
-    else:
-        return None
+    e = None
+    for i in range(len(expenses)):
+        if float(expenses[i]['amount']) > highest:
+            highest = float(expenses[i]['amount'])
+            e = expenses[i]
+    return e
+
 
 def calc_average_expenses(expenses):
     avg = 0.0
